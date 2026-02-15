@@ -21,7 +21,7 @@ const projects = [
 
 const Education = () => {
   return (
-    <Section title="Academic Background">
+    <Section id="education" title="Academic Background">
       <div className="grid grid-cols-1 gap-4">
         {projects.map((p) => (
           <div key={p.title} className="group">

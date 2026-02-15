@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import Section from './ui/Section';
 
+const Motion = motion;
+
 const journey = [
   {
     period: '2022–24',
@@ -36,9 +38,9 @@ const journey = [
 
 const Journey = () => {
   return (
-    <Section title="My Journey">
+    <Section id="journey" title="My Journey">
       <div className="relative mx-auto max-w-3xl px-2 py-8 md:px-4 md:py-10">
-        <motion.div 
+        <Motion.div 
           initial={{ scaleY: 0 }}
           whileInView={{ scaleY: 1 }}
           viewport={{ once: true }}
@@ -54,7 +56,7 @@ const Journey = () => {
             return (
               <div key={item.period} className="relative flex items-center justify-between">
                 
-                <motion.div 
+                <Motion.div 
                   initial={{ width: 0 }}
                   whileInView={{ width: '12%' }}
                   viewport={{ once: true }}
@@ -64,7 +66,7 @@ const Journey = () => {
                 />
 
                 <div className={`w-full md:w-[42%] ${isRight ? 'md:ml-auto' : 'md:mr-auto text-right'}`}>
-                  <motion.div
+                  <Motion.div
                     initial={{ opacity: 0, x: isRight ? 20 : -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -91,10 +93,10 @@ const Journey = () => {
                     <p className="mt-1 text-[11px] leading-relaxed text-white/50 group-hover:text-white/70">
                       {item.detail}
                     </p>
-                  </motion.div>
+                  </Motion.div>
                 </div>
 
-                <motion.div
+                <Motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -105,7 +107,7 @@ const Journey = () => {
                     className="size-1.5 rounded-full animate-pulse"
                     style={{ backgroundColor: item.color, boxShadow: `0 0 10px ${item.color}` }}
                   />
-                </motion.div>
+                </Motion.div>
 
               </div>
             );

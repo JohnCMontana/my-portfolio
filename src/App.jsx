@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Header from './components/ui/Header'
 import Learning from './components/Learning'
 import Journey from './components/Journey'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Footer />
         </div>
       </div>
+      <Navbar />
     </div>
   )
 }

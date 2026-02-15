@@ -1,7 +1,6 @@
 import Section from './ui/Section'
 import GlowButton from './ui/GlowButton'
 import Button from './ui/Button'
-import ThemeToggle from './ThemeToggle'
 import SocialLinks from './SocialLinks'
 
 const Hero = () => {
@@ -11,9 +10,8 @@ const Hero = () => {
             <div className="space-y-1">
               <img src="/john-avatar.png" alt="Avatar" className="mb-2 h-18 w-18 rounded-2xl" />
               <div className="text-2xl font-semibold">John Montaña</div>
-              <div className="text-sm text-white/60">Software Developer · Expanding into Cybersecurity</div>
+              <div className="text-sm text-white/60">Full Stack Developer · Expanding into Cybersecurity</div>
             </div>
-            <ThemeToggle />
           </div>
 
       <div className="my-8 space-y-3">

@@ -57,7 +57,7 @@ const toolLinks = {
 
 const TechStack = () => {
   return (
-    <Section title="Tech Stack">
+    <Section id="tech" title="Tech Stack">
       <p className="text-sm text-white/40">
         The stack behind my daily workflow — powering the process from idea to production.
       </p>
