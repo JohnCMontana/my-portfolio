@@ -7,7 +7,7 @@ const toolkit = [
   },
   {
     title: 'Backend & Databases',
-    items: ['Java', 'MongoDB', 'MySQL'],
+    items: ['Java', 'Python', 'MongoDB', 'MySQL'],
   },
   {
     title: 'Tools & Workflow',
@@ -25,6 +25,7 @@ const toolIcons = {
   JavaScript: '/images/logos/javascript.png',
   'Tailwind CSS': '/images/logos/tailwind.png',
   Java: '/images/logos/java.png',
+  Python: '/images/logos/python.png',
   MongoDB: '/images/logos/mongodb.png',
   MySQL: '/images/logos/mysql.png',
   Git: '/images/logos/git.png',
@@ -43,6 +44,7 @@ const toolLinks = {
   JavaScript: 'https://developer.mozilla.org/docs/Web/JavaScript',
   'Tailwind CSS': 'https://tailwindcss.com/',
   Java: 'https://www.java.com/',
+  Python: 'https://www.python.org/',
   MongoDB: 'https://www.mongodb.com/',
   MySQL: 'https://www.mysql.com/',
   Git: 'https://git-scm.com/',

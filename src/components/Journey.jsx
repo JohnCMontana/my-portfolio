@@ -31,7 +31,7 @@ const journey = [
   {
     period: 'Present',
     title: 'Cybersecurity',
-    detail: 'Focus on security testing, vulnerability assessment & secure systems.',
+    detail: 'Self-learning cybersecurity: testing, vulnerability assessment, and secure practices.',
     color: '#ef4444',
   },
 ];

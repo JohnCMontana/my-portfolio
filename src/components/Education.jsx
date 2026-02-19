@@ -6,16 +6,16 @@ const projects = [
     level: 'EQF Level 5',
     subtitle: '2024 - 2026',
     icon: '/dam-icon.png',
-    tint: 'group-hover:bg-purple-500/2',
-    borderTint: 'group-hover:border-purple-500/15',
+    tint: 'group-hover:bg-purple-500/7',
+    borderTint: 'group-hover:border-purple-500/30',
   },
   {
     title: 'Technical Diploma in IT Systems & Networks',
     level: 'EQF Level 4',
     subtitle: '2022 - 2024',
     icon: '/smr-icon.png',
-    tint: 'group-hover:bg-green-500/2',
-    borderTint: 'group-hover:border-green-500/15',
+    tint: 'group-hover:bg-green-500/7',
+    borderTint: 'group-hover:border-green-500/30',
   },
 ]
 
