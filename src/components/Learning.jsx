@@ -70,11 +70,11 @@ const Learning = () => {
         {topics.map((t, i) => {
           const isOpen = open === i
           return (
-            <li key={t.title} className="rounded-lg border border-[#212121] bg-transparent">
+            <li key={t.title} className="bg-transparent">
               <button
                 type="button"
                 onClick={() => toggle(i)}
-                className="flex w-full items-center justify-between p-3 text-sm"
+                className="flex w-full items-center justify-between py-3 text-sm"
               >
                 <span className="flex items-center gap-3">
                   {(() => {

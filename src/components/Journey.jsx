@@ -78,7 +78,7 @@ const Journey = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.2, delay: 0.2 + index * 0.1 }}
                     whileHover={{ scale: 1.02, x: isRight ? 5 : -5 }}
-                    className="group relative rounded-xl border border-[#212121] bg-white/5 p-4 backdrop-blur-sm transition-colors hover:bg-white/10"
+                    className="group relative rounded-xl border border-[#212121] bg-white/2 p-4 backdrop-blur-sm transition-colors hover:bg-white/3"
                   >
                     <div 
                       className="absolute -inset-px rounded-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"

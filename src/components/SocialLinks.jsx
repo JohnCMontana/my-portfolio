@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+
+const Motion = motion;
 
 const socials = [
   {
@@ -48,15 +50,15 @@ const SocialLinks = () => {
               {item.icon}
               <AnimatePresence>
                 {copied && item.name === 'Email' && (
-                  <motion.span
+                  <Motion.span
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-md bg-white/10 px-2 py-1 text-xs text-white whitespace-nowrap"
                   >
-                    johnclyde.montana@gmail.com · Copied!
-                  </motion.span>
+                    📧 Email copied!
+                  </Motion.span>
                 )}
               </AnimatePresence>
             </button>
