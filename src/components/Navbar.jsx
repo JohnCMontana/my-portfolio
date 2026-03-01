@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <div className="fixed inset-x-0 bottom-4 z-50 flex justify-center px-4">
-      <nav className="flex flex-wrap items-center justify-center gap-4 rounded-full border border-[#212121] bg-[#212121]/10 px-3 py-2 text-xs text-white backdrop-blur-md">
+      <nav className="flex flex-wrap items-center justify-center gap-4 rounded-full border border-[#212121] bg-[black]/30 px-3 py-2 text-xs text-white backdrop-blur-lg">
         {links.map((link) => {
           const isActive = activeId === link.href.replace('#', '')
           return (

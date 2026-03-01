@@ -31,8 +31,14 @@ const journey = [
   {
     period: 'Present',
     title: 'Cybersecurity',
-    detail: 'Self-learning cybersecurity: testing, vulnerability assessment, and secure practices.',
+    detail: 'Self-learning cybersecurity: testing, vulnerability assessment, secure practices, and pursuing relevant certifications.',
     color: '#ef4444',
+  },
+  {
+    period: 'Present',
+    title: 'Internship at MCS Spain',
+    detail: 'Software Development Intern at MCS Spain, gaining hands-on experience in cybersecurity.',
+    color: '#ef44d0',
   },
 ];
 
