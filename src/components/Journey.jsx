@@ -36,8 +36,8 @@ const journey = [
   },
   {
     period: 'Present',
-    title: 'Internship at MCS Spain',
-    detail: 'Software Development Intern at MCS Spain, gaining hands-on experience in cybersecurity.',
+    title: 'SOC Analyst Intern at MCS Spain',
+    detail: 'SOC Analyst Intern at MCS Spain, gaining hands-on experience in security monitoring, incident detection, and threat analysis.',
     color: '#ef44d0',
   },
 ];
@@ -67,8 +67,11 @@ const Journey = () => {
                   whileInView={{ width: '12%' }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + index * 0.1 }}
-                  className={`absolute top-1/2 h-px bg-white/15 hidden md:block
-                    ${isRight ? 'left-1/2' : 'right-1/2'}`}
+                  className={`absolute top-1/2 h-px hidden md:block
+                    ${isRight 
+                      ? 'left-1/2 bg-gradient-to-r from-white/15 to-transparent' 
+                      : 'right-1/2 bg-gradient-to-l from-white/15 to-transparent'
+                    }`}
                 />
 
                 <div className={`relative ml-12 md:ml-0 w-[calc(100%-3rem)] md:w-[42%] ${isRight ? 'md:ml-auto md:text-left' : 'md:mr-auto md:text-right'}`}>
@@ -78,7 +81,7 @@ const Journey = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.2, delay: 0.2 + index * 0.1 }}
                     whileHover={{ scale: 1.02, x: isRight ? 5 : -5 }}
-                    className="group relative rounded-xl border border-[#212121] bg-white/2 p-4 backdrop-blur-sm transition-colors hover:bg-white/3"
+                    className="group relative rounded-xl border border-[#212121] bg-white/5 p-4 backdrop-blur-sm transition-colors hover:bg-white/5"
                   >
                     <div 
                       className="absolute -inset-px rounded-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -96,7 +99,7 @@ const Journey = () => {
                       {item.title}
                     </h3>
                     
-                    <p className="mt-1 text-[11px] leading-relaxed text-white/50 group-hover:text-white/70">
+                    <p className="mt-1 text-[11px] leading-relaxed text-black/60 dark:text-white/50 group-hover:text-black/80 dark:group-hover:text-white/70">
                       {item.detail}
                     </p>
                   </Motion.div>

@@ -13,7 +13,7 @@ const Footer = () => {
         email="johnclyde.montana@gmail.com" 
       />
       <div className="mx-auto max-w-2xl text-center py-12">
-        <h3 className="mb-6 text-3xl md:text-4xl font-semibold font-['JetBrains_Mono']">Keep calm and vibe code.</h3>
+        <h3 className="mb-6 text-3xl md:text-4xl font-semibold font-['JetBrains_Mono'] text-white">Keep calm and vibe code.</h3>
         <div className="mb-6 flex justify-center items-center">
           <img src="/avatars/john-avatar.png" alt="John Montaña" className="w-40 h-40 mb-4 rounded-full" />
         </div>

@@ -3,16 +3,10 @@ export default {
     './index.html',
     './src/**/*.{js,jsx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        bg: {
-          DEFAULT: '#0f0f0f',
-          light: '#f7f7f7',
-        },
-        card: '#111111',
-        accent: '#d1d5db',
+        bg: '#0f0f0f',
       },
       boxShadow: {
         soft: '0 6px 24px rgba(0,0,0,0.35)',

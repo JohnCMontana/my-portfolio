@@ -104,7 +104,7 @@ const Learning = () => {
                         : t.items
                       return (
                         <div className="px-3 pb-3">
-                          <p className="text-sm leading-relaxed text-white/70">{desc}</p>
+                          <p className="text-sm leading-relaxed text-black/70 dark:text-white/70">{desc}</p>
                         </div>
                       )
                     })()}
