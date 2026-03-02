@@ -1,14 +1,23 @@
+import { useState } from 'react'
 import Section from './ui/Section'
 import GlowButton from './ui/GlowButton'
 import Button from './ui/Button'
 import SocialLinks from './SocialLinks'
+import Contact from './ui/Contact'
 
 const Hero = () => {
+  const [isContactOpen, setIsContactOpen] = useState(false)
+
   return (
     <Section id="home">
+      <Contact 
+        isOpen={isContactOpen} 
+        onClose={() => setIsContactOpen(false)} 
+        email="johnclyde.montana@gmail.com" 
+      />
       <div className="mb-12 flex flex-col items-center text-center">
         <div className="space-y-1">
-          <img src="/john-avatar.png" alt="Avatar" className="mb-2 mt-6 h-18 w-18 rounded-2xl mx-auto" />
+          <img src="/avatars/john-avatar.png" alt="Avatar" className="mb-2 mt-6 h-18 w-18 rounded-2xl mx-auto" />
           <div className="text-2xl font-semibold">John Montaña</div>
           <div className="text-sm text-white/60">Full Stack Developer · Expanding into Cybersecurity</div>
         </div>
@@ -19,8 +28,8 @@ const Hero = () => {
           Shaping digital experiences<br />With precision.
         </h1>
         <div className="flex flex-wrap justify-center gap-3 pt-2 mt-4">
-          <GlowButton href="#contact">Get in touch</GlowButton>
-          <Button href="#contact">View CV</Button>
+          <GlowButton onClick={() => setIsContactOpen(true)}>Get in touch</GlowButton>
+          <Button href="/JohnCMontana-CV.pdf" target="_blank">View CV</Button>
         </div>
       </div>
 

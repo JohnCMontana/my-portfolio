@@ -52,10 +52,10 @@ const Journey = () => {
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
           style={{ originY: 0 }}
-          className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-white/30 via-white/15 to-transparent"
+          className="absolute left-6 md:left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-white/30 via-white/15 to-transparent"
         />
 
-        <div className="space-y-2 md:space-y-5">
+        <div className="space-y-8 md:space-y-12">
           {journey.map((item, index) => {
             const isRight = index % 2 !== 0;
 
@@ -71,7 +71,7 @@ const Journey = () => {
                     ${isRight ? 'left-1/2' : 'right-1/2'}`}
                 />
 
-                <div className={`w-full md:w-[42%] ${isRight ? 'md:ml-auto' : 'md:mr-auto text-right'}`}>
+                <div className={`relative ml-12 md:ml-0 w-[calc(100%-3rem)] md:w-[42%] ${isRight ? 'md:ml-auto md:text-left' : 'md:mr-auto md:text-right'}`}>
                   <Motion.div
                     initial={{ opacity: 0, x: isRight ? 20 : -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -107,7 +107,7 @@ const Journey = () => {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ type: "spring", stiffness: 300, delay: index * 0.1 }}
-                  className="absolute left-1/2 z-10 flex size-5 -translate-x-1/2 items-center justify-center rounded-full bg-bg border border-[#212121]"
+                  className="absolute left-6 md:left-1/2 z-10 flex size-5 -translate-x-1/2 items-center justify-center rounded-full bg-bg border border-[#212121]"
                 >
                   <div 
                     className="size-1.5 rounded-full animate-pulse"
