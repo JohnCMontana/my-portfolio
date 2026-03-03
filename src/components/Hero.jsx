@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="mb-12 flex flex-col items-center text-center">
         <div className="space-y-1">
           <img src="/avatars/john-avatar.png" alt="Avatar" className="mb-2 mt-6 h-20 w-20 rounded-2xl mx-auto shadow-2xl" />
-          <div className="text-2xl font-semibold text-white">John Montaña</div>
+          <div className="text-2xl font-semibold text-white">👋 John Montaña</div>
           <div className="text-sm text-white/60">Full Stack Developer · Expanding into Cybersecurity</div>
         </div>
       </div>

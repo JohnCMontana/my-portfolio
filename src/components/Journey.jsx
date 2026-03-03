@@ -55,7 +55,7 @@ const Journey = () => {
           className="absolute left-6 md:left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-white/30 via-white/15 to-transparent"
         />
 
-        <div className="space-y-8 md:space-y-12">
+        <div className="space-y-4 md:space-y-1">
           {journey.map((item, index) => {
             const isRight = index % 2 !== 0;
 
@@ -64,7 +64,7 @@ const Journey = () => {
                 
                 <Motion.div 
                   initial={{ width: 0 }}
-                  whileInView={{ width: '12%' }}
+                  whileInView={{ width: '10%' }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + index * 0.1 }}
                   className={`absolute top-1/2 h-px hidden md:block
@@ -99,7 +99,7 @@ const Journey = () => {
                       {item.title}
                     </h3>
                     
-                    <p className="mt-1 text-[11px] leading-relaxed text-black/60 dark:text-white/50 group-hover:text-black/80 dark:group-hover:text-white/70">
+                    <p className="mt-1 text-[11px] leading-relaxed text-white/50 group-hover:text-white/70">
                       {item.detail}
                     </p>
                   </Motion.div>

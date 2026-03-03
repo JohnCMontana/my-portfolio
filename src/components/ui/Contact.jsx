@@ -1,11 +1,12 @@
 import { useState, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import emailjs from '@emailjs/browser'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Contact = ({ isOpen, onClose, email }) => {
   const form = useRef()
   const [loading, setLoading] = useState(false)
-  const [status, setStatus] = useState(null) // null, 'success', 'error'
+  const [status, setStatus] = useState(null)
 
   const sendEmail = (e) => {
     e.preventDefault()
@@ -31,7 +32,7 @@ const Contact = ({ isOpen, onClose, email }) => {
       })
   }
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <motion.div
@@ -46,7 +47,7 @@ const Contact = ({ isOpen, onClose, email }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="w-full max-w-2xl rounded-2xl border border-[#212121] bg-bg/95 p-6 md:p-10 text-left shadow-[0_20px_60px_rgba(0,0,0,0.6)] backdrop-blur-md mx-4 overflow-y-auto max-h-[90vh]"
+            className="w-full max-w-2xl rounded-2xl border border-[#212121] bg-bg/95 p-6 md:p-10 text-left shadow-[0_20px_60px_rgba(0,0,0,0.6)] backdrop-blur-md overflow-y-auto max-h-[90vh]"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex flex-col md:flex-row items-start justify-between gap-6 mb-8">
@@ -182,7 +183,8 @@ const Contact = ({ isOpen, onClose, email }) => {
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   )
 }
 

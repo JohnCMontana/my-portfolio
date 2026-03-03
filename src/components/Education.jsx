@@ -27,7 +27,7 @@ const Education = () => {
       <div className="grid grid-cols-1 gap-4">
         {projects.map((p) => (
           <div key={p.title} className="group">
-            <div className={`relative mb-5 flex h-42 items-center justify-center rounded-xl border border-[#212121] overflow-hidden transition-colors duration-300 ${p.borderTint}`}>
+            <div className={`relative mb-5 flex h-44 items-center justify-center rounded-xl border border-[#212121] overflow-hidden transition-colors duration-300 ${p.borderTint}`}>
               <img src={p.bg} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover grayscale brightness-50 transition-transform duration-300 group-hover:scale-105" />
               <div className={`absolute inset-0 opacity-0 transition-opacity duration-300 ${p.tint} group-hover:opacity-100 z-0`} />
               <div className="relative z-10">

@@ -1,120 +1,147 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  HiChevronDown,
-  HiCodeBracket,
-  HiSparkles,
-  HiServer,
-  HiSquares2X2,
-  HiDevicePhoneMobile,
-  HiArrowPath,
-  HiShieldCheck,
+  HiAcademicCap,
+  HiGlobeAlt,
+  HiTrophy,
+  HiLanguage,
+  HiSparkles
 } from 'react-icons/hi2'
 import Section from './ui/Section'
 
-const Motion = motion
-
-const iconMap = {
-  'Web Development & Frameworks': HiCodeBracket,
-  'Animation & Interactivity': HiSparkles,
-  'Data Visualization': HiSquares2X2,
-  'AI & Generative Tools': HiSparkles,
-  'Backend & APIs': HiServer,
-  'Design Systems & UI/UX': HiSquares2X2,
-  'Mobile Development': HiDevicePhoneMobile,
-  'Version Control & Collaboration': HiArrowPath,
-  Cybersecurity: HiShieldCheck,
-}
-
-const topics = [
+const learningItems = [
   {
-    title: 'Web Development & Frameworks',
-    items: ['Deepening knowledge in React, Next.js, and experimenting with Tailwind CSS for modern UI.'],
+    category: 'Certification',
+    title: 'AWS Cloud Practitioner',
+    icon: HiAcademicCap,
+    tags: ['Cloud Computing', 'AWS', 'Infrastructure'],
+    desc: 'Foundational understanding of AWS Cloud concepts, security, and compliance.',
+    image: '/images/logos/aws-certified.png', // Placeholder, using generic logic later
+    color: 'from-orange-500/20 to-yellow-500/20'
   },
   {
-    title: 'AI & Generative Tools',
-    items: ['Experimenting with OpenAI API, Stable Diffusion, and ChatGPT plugins for creative projects.'],
+    category: 'Goal 2026',
+    title: 'Master Rust & WebAssembly',
+    icon: HiTrophy,
+    tags: ['Systems Programming', 'Performance', 'Wasm'],
+    desc: 'Deep diving into memory safety and high-performance web applications using Rust.',
+    color: 'from-red-500/20 to-orange-500/20'
   },
   {
-    title: 'Backend & APIs',
-    items: ['Node.js', 'Express', 'REST', 'GraphQL'],
+    category: 'Language',
+    title: 'Japanese (N4)',
+    icon: HiLanguage,
+    tags: ['Conversational', 'Reading', 'Kanji'],
+    desc: 'Studying for the JLPT N4 exam. Passionate about Japanese culture and technology.',
+    color: 'from-pink-500/20 to-rose-500/20'
   },
   {
-    title: 'Design Systems & UI/UX',
-    items: ['Building reusable component libraries, focusing on accessibility and responsive design.'],
+    category: 'Currently Learning',
+    title: 'Three.js & WebGL',
+    icon: HiGlobeAlt,
+    tags: ['3D Graphics', 'Creative Coding', 'Shaders'],
+    desc: 'Creating immersive 3D web experiences and exploring the math behind computer graphics.',
+    color: 'from-blue-500/20 to-cyan-500/20'
   },
   {
-    title: 'Mobile Development',
-    items: ['Learning React Native and Expo to create cross-platform apps.'],
-  },
-  {
-    title: 'Version Control & Collaboration',
-    items: ['Exploring web security fundamentals, ethical hacking, and vulnerability testing to build safer applications.'],
-  },
-  {
-    title: 'Cybersecurity',
-    items: ['Web security fundamentals', 'Ethical hacking', 'Vulnerability testing'],
-  },
+    category: 'Soft Skill',
+    title: 'Technical Writing',
+    icon: HiSparkles,
+    tags: ['Documentation', 'Communication', 'Blogging'],
+    desc: 'Improving ability to explain complex technical concepts through clear, concise writing.',
+    color: 'from-green-500/20 to-emerald-500/20'
+  }
 ]
 
 const Learning = () => {
-  const [open, setOpen] = useState(null)
+  const [index, setIndex] = useState(0)
 
-  const toggle = (idx) => {
-    setOpen((prev) => (prev === idx ? null : idx))
-  }
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % learningItems.length)
+    }, 6000)
+    return () => clearInterval(timer)
+  }, [])
 
   return (
-    <Section id="learning" title="Currently Exploring">
-      <ul className="space-y-2 list-none">
-        {topics.map((t, i) => {
-          const isOpen = open === i
-          return (
-            <li key={t.title} className="bg-transparent">
-              <button
-                type="button"
-                onClick={() => toggle(i)}
-                className="flex w-full items-center justify-between py-3 text-sm"
-              >
-                <span className="flex items-center gap-3">
-                  {(() => {
-                    const Icon = iconMap[t.title] || HiSparkles
-                    return <Icon className="size-5 text-white/70" aria-hidden="true" />
-                  })()}
-                  <span className="font-medium text-white/90">{t.title}</span>
-                </span>
-                <HiChevronDown
-                  className={`size-5 text-white/60 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-                  aria-hidden="true"
-                />
-              </button>
+    <Section id="learning" title="Beyond Code">
+      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl border border-[#212121] bg-bg/50 backdrop-blur-md h-[400px]">
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={index}
+            initial={{ x: '100%', opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '-100%', opacity: 0 }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+            className="absolute inset-0 flex flex-col"
+          >
+            {/* Visual Area */}
+            <div className="relative h-40 w-full overflow-hidden border-b border-[#212121] group">
+              <div 
+                className="absolute inset-0 opacity-20 transition-opacity duration-500" 
+                style={{ 
+                  background: `radial-gradient(circle at center, ${learningItems[index].color.split(' ')[1].replace('to-', '')} 0%, transparent 70%)` 
+                }} 
+              />
+              <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
+              
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#121212]/80 via-transparent to-transparent"></div>
 
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <Motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="overflow-hidden"
-                  >
-                    {(() => {
-                      const desc = Array.isArray(t.items)
-                        ? (t.items.length > 1 ? t.items.join(', ') : t.items[0])
-                        : t.items
-                      return (
-                        <div className="px-3 pb-3">
-                          <p className="text-sm leading-relaxed text-black/70 dark:text-white/70">{desc}</p>
-                        </div>
-                      )
-                    })()}
-                  </Motion.div>
-                )}
-              </AnimatePresence>
-            </li>
-          )
-        })}
-      </ul>
+              <div className="absolute bottom-4 left-4 z-10 rounded-full border border-white/10 bg-black/40 px-3 py-1 text-[10px] uppercase tracking-wider text-white/80 backdrop-blur-md">
+                {learningItems[index].category}
+              </div>
+
+              <div className="flex h-full items-center justify-center">
+                 <div className="relative rounded-2xl border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-sm transition-transform duration-500 group-hover:scale-105">
+                   {(() => {
+                     const Icon = learningItems[index].icon
+                     return <Icon className="size-10 text-white/70" />
+                   })()}
+                 </div>
+              </div>
+            </div>
+
+            {/* Content Area */}
+            <div className="flex flex-1 flex-col justify-between p-6 md:p-8">
+              <div>
+                <div className="flex items-start justify-between">
+                  <h3 className="mb-3 text-2xl font-semibold text-white font-['JetBrains_Mono']">{learningItems[index].title}</h3>
+                </div>
+                
+                {/* Tags */}
+                <div className="mb-5 flex flex-wrap gap-2">
+                  {learningItems[index].tags.map((tag) => (
+                    <span 
+                      key={tag} 
+                      className="flex items-center gap-1.5 rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-white/60 transition-colors hover:bg-white/10 hover:text-white/80"
+                    >
+                      <HiSparkles className="size-3 opacity-70" />
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="text-sm leading-relaxed text-white/50">
+                  {learningItems[index].desc}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Progress Indicators */}
+        <div className="absolute bottom-6 right-6 flex gap-2 z-10">
+          {learningItems.map((_, i) => (
+            <div 
+              key={i} 
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === index ? 'w-6 bg-white' : 'w-1.5 bg-white/10'
+              }`} 
+            />
+          ))}
+        </div>
+      </div>
     </Section>
   )
 }

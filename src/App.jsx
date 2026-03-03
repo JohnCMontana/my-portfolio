@@ -10,7 +10,7 @@ import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div className="min-h-screen bg-bg text-white">
+    <div className="min-h-screen bg-bg text-white pb-24">
       <div className="mx-auto max-w-4xl px-4 py-2 md:py-4">
         <Header className="mb-6">
           <div className="flex items-center justify-between text-xs text-white">
