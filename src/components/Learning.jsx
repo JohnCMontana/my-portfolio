@@ -90,6 +90,7 @@ const Learning = () => {
 
               <div className="absolute bottom-4 left-4 z-10 rounded-full border border-white/10 bg-black/40 px-3 py-1 text-[10px] uppercase tracking-wider text-white/80 backdrop-blur-md">
                 {learningItems[index].category}
+                
               </div>
 
               <div className="flex h-full items-center justify-center">
