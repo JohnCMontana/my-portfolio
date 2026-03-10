@@ -7,6 +7,7 @@ import Header from './components/ui/Header'
 import Learning from './components/Learning'
 import Journey from './components/Journey'
 import Navbar from './components/Navbar'
+import Chatbot from './components/Chatbot'
 
 function App() {
   return (
@@ -34,7 +35,8 @@ function App() {
         </div>
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <Projects />
+          {/* <Projects /> */}
+          <Chatbot />
           <Learning />
         </div>
 

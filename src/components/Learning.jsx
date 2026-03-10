@@ -11,46 +11,45 @@ import Section from './ui/Section'
 
 const learningItems = [
   {
-    category: 'Certification',
-    title: 'AWS Cloud Practitioner',
-    icon: HiAcademicCap,
-    tags: ['Cloud Computing', 'AWS', 'Infrastructure'],
-    desc: 'Foundational understanding of AWS Cloud concepts, security, and compliance.',
-    image: '/images/logos/aws-certified.png', // Placeholder, using generic logic later
-    color: 'from-orange-500/20 to-yellow-500/20'
-  },
-  {
-    category: 'Goal 2026',
-    title: 'Master Rust & WebAssembly',
-    icon: HiTrophy,
-    tags: ['Systems Programming', 'Performance', 'Wasm'],
-    desc: 'Deep diving into memory safety and high-performance web applications using Rust.',
-    color: 'from-red-500/20 to-orange-500/20'
-  },
-  {
-    category: 'Language',
-    title: 'Japanese (N4)',
+    category: 'Currently Studying',
+    title: 'German',
     icon: HiLanguage,
-    tags: ['Conversational', 'Reading', 'Kanji'],
-    desc: 'Studying for the JLPT N4 exam. Passionate about Japanese culture and technology.',
-    color: 'from-pink-500/20 to-rose-500/20'
+    tags: ['A1–A2', 'Speaking', 'Reading'],
+    desc: 'Currently learning German to improve communication and open more opportunities in the European tech market.',
+    color: 'from-indigo-500/20 to-purple-500/20'
   },
   {
-    category: 'Currently Learning',
-    title: 'Three.js & WebGL',
-    icon: HiGlobeAlt,
-    tags: ['3D Graphics', 'Creative Coding', 'Shaders'],
-    desc: 'Creating immersive 3D web experiences and exploring the math behind computer graphics.',
+    category: 'Cybersecurity Training',
+    title: 'SOC Analyst Path – LetsDefend',
+    icon: HiAcademicCap,
+    tags: ['SOC', 'Blue Team', 'SIEM'],
+    desc: 'Working through the LetsDefend SOC Analyst learning path: analyzing alerts, investigating incidents, and understanding real-world security operations.',
     color: 'from-blue-500/20 to-cyan-500/20'
   },
   {
-    category: 'Soft Skill',
-    title: 'Technical Writing',
-    icon: HiSparkles,
-    tags: ['Documentation', 'Communication', 'Blogging'],
-    desc: 'Improving ability to explain complex technical concepts through clear, concise writing.',
+    category: 'Cybersecurity',
+    title: 'Ethical Hacking & Pentesting',
+    icon: HiTrophy,
+    tags: ['Kali Linux', 'Networking', 'Recon'],
+    desc: 'Learning the fundamentals of ethical hacking: reconnaissance, vulnerability scanning, and penetration testing techniques.',
+    color: 'from-red-500/20 to-orange-500/20'
+  },
+  {
+    category: 'Development',
+    title: 'Java & Multiplatform Apps',
+    icon: HiGlobeAlt,
+    tags: ['Java', 'OOP', 'Backend'],
+    desc: 'Studying Java and object-oriented programming while building multiplatform applications as part of my DAM degree.',
     color: 'from-green-500/20 to-emerald-500/20'
-  }
+  },
+  {
+  category: 'Future Goal',
+  title: 'Pentesting & Ethical Hacking',
+  icon: HiTrophy,
+  tags: ['Penetration Testing', 'Red Team', 'Security'],
+  desc: 'Planning to move deeper into penetration testing after building strong blue-team and networking fundamentals. Goal is to practice real-world attack simulations and vulnerability exploitation.',
+  color: 'from-red-500/20 to-orange-500/20'
+}
 ]
 
 const Learning = () => {
@@ -65,7 +64,7 @@ const Learning = () => {
 
   return (
     <Section id="learning" title="Beyond Code">
-      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl border border-[#212121] bg-bg/50 backdrop-blur-md h-[400px]">
+      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl bg-bg/50 backdrop-blur-md h-[400px]">
         <AnimatePresence mode="popLayout">
           <motion.div
             key={index}
