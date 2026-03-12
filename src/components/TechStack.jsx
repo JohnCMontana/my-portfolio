@@ -14,8 +14,8 @@ const toolkit = [
     items: ['Git', 'GitHub', 'Trae', 'Vite', 'Figma'],
   },
   {
-    title: 'Cybersecurity & Systems',
-    items: ['Kali Linux', 'Linux', 'Wireshark'],
+    title: 'AI & Assistive Tools',
+    items: ['Chat GPT', 'Gemini','Recraft'],
   },
 ]
 
@@ -33,9 +33,9 @@ const toolIcons = {
   Vite: '/images/logos/vite.png',
   Trae: '/images/logos/trae.png',
   Figma: '/images/logos/figma.png',
-  'Kali Linux': '/images/logos/kalilinux.png',
-  Linux: '/images/logos/linux.png',
-  Wireshark: '/images/logos/wireshark.png',
+  'Chat GPT': '/images/logos/chatgpt.png',
+  Gemini: '/images/logos/gemini.png',
+  Recraft: '/images/logos/recraft.png',
 }
 
 const toolLinks = {
@@ -52,9 +52,9 @@ const toolLinks = {
   Trae: 'https://trae.ai/',
   Vite: 'https://vite.dev/',
   Figma: 'https://www.figma.com/',
-  'Kali Linux': 'https://www.kali.org/',
-  Linux: 'https://www.linux.org/',
-  Wireshark: 'https://www.wireshark.org/',
+  'Chat GPT': 'https://chat.openai.com/',
+  Gemini: 'https://ai.google.dev/',
+  Recraft: 'https://recraft.ai/',
 }
 
 const TechStack = () => {

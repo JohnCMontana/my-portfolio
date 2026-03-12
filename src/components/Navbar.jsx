@@ -5,7 +5,7 @@ const links = [
   { href: '#home', label: 'Home', Icon: HiHome },
   { href: '#education', label: 'Education', Icon: HiAcademicCap },
   { href: '#journey', label: 'Journey', Icon: HiMap },
-  { href: '#projects', label: 'Projects', Icon: HiFolder },
+  { href: '#learning', label: 'More', Icon: HiFolder },
 ]
 
 const Navbar = () => {
@@ -50,19 +50,28 @@ const Navbar = () => {
         {links.map((link) => {
           const isActive = activeId === link.href.replace('#', '')
           return (
-          <a
-            key={link.href}
-            href={link.href}
-            className={`group relative flex items-center justify-center rounded-full px-3 py-2 transition-colors hover:bg-white/10 hover:text-white ${
-              isActive ? 'bg-white/15 text-white' : ''
-            }`}
-          >
-            <link.Icon className="size-5" aria-hidden="true" />
-            <span className="sr-only">{link.label}</span>
-            <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-black/80 px-2 py-1 text-[10px] text-white/80 opacity-0 transition-all duration-200 group-hover:-top-9 group-hover:opacity-100">
-              {link.label}
-            </span>
-          </a>
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.querySelector(link.href)
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                  // Update URL hash without jumping
+                  history.pushState(null, null, link.href)
+                }
+              }}
+              className={`group relative flex items-center justify-center rounded-full px-3 py-2 transition-colors hover:bg-white/10 hover:text-white ${
+                isActive ? 'bg-white/15 text-white' : ''
+              }`}
+            >
+              <link.Icon className="size-5" aria-hidden="true" />
+              <span className="sr-only">{link.label}</span>
+              <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-black/80 px-2 py-1 text-[10px] text-white/80 opacity-0 transition-all duration-200 group-hover:-top-9 group-hover:opacity-100">
+                {link.label}
+              </span>
+            </a>
           )
         })}
       </nav>
