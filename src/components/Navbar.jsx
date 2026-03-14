@@ -17,7 +17,7 @@ const Navbar = () => {
       const hash = window.location.hash.replace('#', '')
       if (hash) setActiveId(hash)
     }
-
+ 
     setFromHash()
     window.addEventListener('hashchange', setFromHash)
 
