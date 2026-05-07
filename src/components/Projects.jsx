@@ -32,7 +32,7 @@ const Projects = () => {
 
   return (
     <Section id="projects" title="My Sandbox">
-      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl border border-[#212121] bg-bg/50 backdrop-blur-md h-[420px]">
+      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl border border-[#212121] bg-bg/50 backdrop-blur-md min-h-[440px] md:h-[420px]">
         <AnimatePresence mode="popLayout">
           <motion.div
             key={index}

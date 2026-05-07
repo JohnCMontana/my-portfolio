@@ -2,73 +2,65 @@ import Section from './ui/Section'
 
 const toolkit = [
   {
-    title: 'Frontend',
-    items: ['React', 'Next.js', 'JavaScript', 'Tailwind CSS'],
+    title: 'Core Security',
+    items: ['Wazuh', 'Suricata', 'Watchguard', 'Linux'],
   },
   {
-    title: 'Backend & Databases',
-    items: ['Java', 'Python', 'MongoDB', 'MySQL'],
+    title: 'Automation & Lab',
+    items: ['GitHub', 'Docker', 'Python', 'n8n'],
   },
   {
     title: 'Tools & Workflow',
-    items: ['Git', 'GitHub', 'Trae', 'Vite', 'Figma'],
-  },
-  {
-    title: 'AI & Assistive Tools',
-    items: ['Chat GPT', 'Gemini','Recraft'],
+    items: ['Gemini', 'Claude', 'Trae', 'Figma'],
   },
 ]
 
 const toolIcons = {
-  React: '/images/logos/react.png',
-  'Next.js': '/images/logos/nextjs.png',
-  JavaScript: '/images/logos/javascript.png',
-  'Tailwind CSS': '/images/logos/tailwind.png',
-  Java: '/images/logos/java.png',
   Python: '/images/logos/python.png',
-  MongoDB: '/images/logos/mongodb.png',
-  MySQL: '/images/logos/mysql.png',
-  Git: '/images/logos/git.png',
   GitHub: '/images/logos/github.png',
-  Vite: '/images/logos/vite.png',
   Trae: '/images/logos/trae.png',
   Figma: '/images/logos/figma.png',
-  'Chat GPT': '/images/logos/chatgpt.png',
+  Claude: '/images/logos/claude.png',
   Gemini: '/images/logos/gemini.png',
-  Recraft: '/images/logos/recraft.png',
+  Docker: '/images/logos/docker.png',
+  VirusTotal: '/images/logos/virustotal.png',
+  n8n: '/images/logos/n8n.png',
+  Linux: '/images/logos/linux.png',
+  Wireshark: '/images/logos/wireshark.png',
+  Wazuh: '/images/logos/wazuh.png',
+  Suricata: '/images/logos/suricata.png',
+  Watchguard: '/images/logos/watchguard.png',
 }
 
 const toolLinks = {
-  React: 'https://react.dev/',
-  'Next.js': 'https://nextjs.org/',
-  JavaScript: 'https://developer.mozilla.org/docs/Web/JavaScript',
-  'Tailwind CSS': 'https://tailwindcss.com/',
-  Java: 'https://www.java.com/',
   Python: 'https://www.python.org/',
-  MongoDB: 'https://www.mongodb.com/',
-  MySQL: 'https://www.mysql.com/',
-  Git: 'https://git-scm.com/',
   GitHub: 'https://github.com/',
   Trae: 'https://trae.ai/',
-  Vite: 'https://vite.dev/',
   Figma: 'https://www.figma.com/',
-  'Chat GPT': 'https://chat.openai.com/',
-  Gemini: 'https://ai.google.dev/',
-  Recraft: 'https://recraft.ai/',
+  Claude: 'https://claude.ai/',
+  Gemini: 'https://gemini.google/about/',
+  Docker: 'https://docker.com/',
+  VirusTotal: 'https://www.virustotal.com/',
+  n8n: 'https://n8n.io/',
+  Linux: 'https://www.linux.org/',
+  Wireshark: 'https://www.wireshark.org/',
+  Wazuh: 'https://www.wazuh.com/',
+  Suricata: 'https://suricata.io',
+  Watchguard: 'https://www.watchguard.com/',
 }
 
 const TechStack = () => {
   return (
     <Section id="tech" title="Tech Stack">
       <p className="text-sm text-white/40">
-        The stack behind my daily workflow — powering the process from idea to production.
+        The stack behind my daily workflow—powering the cycle from threat detection to active mitigation.
       </p>
       <div className="mt-6 grid gap-8 md:grid-cols-2">
         {toolkit.map((group) => (
           <div key={group.title}>
             <div className="text-sm font-semibold text-white/90">{group.title}</div>
             <div className="mt-3 h-px w-full bg-gradient-to-r from-white/10 to-transparent" />
-            <ul className="relative mt-4 space-y-3 after:absolute after:inset-y-0 after:right-0 after:w-10 after:bg-gradient-to-l after:from-bg after:to-transparent after:content-['']">
+            <ul className="mt-4 space-y-3">
               {group.items.map((item) => {
                 const icon = toolIcons[item]
                 const link = toolLinks[item]

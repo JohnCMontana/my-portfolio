@@ -19,22 +19,6 @@ const learningItems = [
     color: 'from-indigo-500/20 to-purple-500/20'
   },
   {
-    category: 'Cybersecurity Training',
-    title: 'SOC Analyst Path – LetsDefend',
-    icon: HiAcademicCap,
-    tags: ['SOC', 'Blue Team', 'SIEM'],
-    desc: 'Working through the LetsDefend SOC Analyst learning path: analyzing alerts, investigating incidents, and understanding real-world security operations.',
-    color: 'from-blue-500/20 to-cyan-500/20'
-  },
-  {
-    category: 'Cybersecurity',
-    title: 'Ethical Hacking & Pentesting',
-    icon: HiTrophy,
-    tags: ['Kali Linux', 'Networking', 'Recon'],
-    desc: 'Learning the fundamentals of ethical hacking: reconnaissance, vulnerability scanning, and penetration testing techniques.',
-    color: 'from-red-500/20 to-orange-500/20'
-  },
-  {
     category: 'Development',
     title: 'Java & Multiplatform Apps',
     icon: HiGlobeAlt,
@@ -64,7 +48,7 @@ const Learning = () => {
 
   return (
     <Section id="learning" title="Beyond Code">
-      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl bg-bg/50 backdrop-blur-md h-[400px]">
+      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl bg-bg/50 backdrop-blur-md min-h-[420px] md:h-[400px]">
         <AnimatePresence mode="popLayout">
           <motion.div
             key={index}

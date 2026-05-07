@@ -38,7 +38,7 @@ const SocialLinks = () => {
   };
 
   return (
-    <div className="mt-6 flex flex-wrap items-center gap-12 text-sm text-white/70">
+    <div className="mt-6 flex flex-wrap items-center gap-8 md:gap-12 text-sm text-white/70">
       {socials.map((item) => {
         if (item.copyValue) {
           return (

@@ -1,5 +1,6 @@
 import Hero from './components/Hero'
-import Education from './components/Education'
+import Skills from './components/Skills'
+import Certifications from './components/Certifications'
 import Projects from './components/Projects'  
 import TechStack from './components/TechStack'
 import Footer from './components/Footer'
@@ -7,12 +8,13 @@ import Header from './components/ui/Header'
 import Learning from './components/Learning'
 import Journey from './components/Journey'
 import Navbar from './components/Navbar'
-import Chatbot from './components/Chatbot'
+import BackgroundGlows from './components/ui/BackgroundGlows'
 
 function App() {
   return (
-    <div className="min-h-screen bg-bg text-white pb-24">
-      <div className="mx-auto max-w-4xl px-4 py-2 md:py-4">
+    <div className="min-h-screen bg-bg text-white pb-24 relative">
+      <BackgroundGlows />
+      <div className="mx-auto max-w-4xl px-3 md:px-4 py-2 md:py-4">
         <Header className="mb-6">
           <div className="flex items-center justify-between text-xs text-white">
             <span>Madrid, Spain</span>
@@ -26,7 +28,10 @@ function App() {
         <Hero />
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <Education />
+          <div className="flex flex-col gap-6">
+            <Skills />
+            <Certifications />
+          </div>
           <TechStack />
         </div>
 
@@ -35,8 +40,7 @@ function App() {
         </div>
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {/* <Projects /> */}
-          <Chatbot />
+          <Projects />
           <Learning />
         </div>
 

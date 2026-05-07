@@ -12,8 +12,8 @@ const journey = [
   },
   {
     period: '2024',
-    title: 'Internship at Grupo Inmark',
-    detail: 'IT support, helpdesk operations, device provisioning & technical documentation.',
+    title: 'IT Support Intern',
+    detail: 'IT support, helpdesk operations, device provisioning & technical documentation at Grupo Inmark.',
     color: '#10b981',
   },
   {
@@ -36,7 +36,7 @@ const journey = [
   },
   {
     period: 'Present',
-    title: 'SOC Analyst Intern at MCS Spain',
+    title: 'SOC Analyst Intern',
     detail: 'SOC Analyst Intern at MCS Spain, gaining hands-on experience in security monitoring, incident detection, and threat analysis.',
     color: '#ef44d0',
   },
