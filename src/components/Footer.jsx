@@ -6,7 +6,7 @@ import { useState } from 'react'
 const Footer = () => {
   const [isContactOpen, setIsContactOpen] = useState(false)
   return (
-    <Section>
+    <Section title="Footer" hideTitle={true}>
       <Contact 
         isOpen={isContactOpen} 
         onClose={() => setIsContactOpen(false)} 

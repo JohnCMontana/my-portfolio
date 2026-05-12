@@ -31,36 +31,42 @@ const certifications = [
 const Certifications = () => {
   return (
     <Section id="certs" title="Certifications & Training">
-      <div className="grid gap-3">
+      <div className="grid grid-cols-1 gap-6 max-w-xl mx-auto">
         {certifications.map((cert) => (
           <div 
             key={cert.title} 
-            className="group relative flex items-center gap-4 p-2 rounded-xl border border-white/5 bg-white/[0.01] hover:border-white/10 transition-all duration-300"
+            className="group relative h-[280px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a0a0a] transition-all duration-500 hover:border-white/20"
           >
-            {/* Image Container */}
-            <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg border border-white/5 bg-black/20">
-              <img 
-                src={cert.image} 
-                alt={cert.title}
-                className="h-full w-full object-contain p-1.5 opacity-80 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
-                onError={(e) => {
-                  e.target.style.display = 'none'
-                  e.target.nextSibling.style.display = 'flex'
-                }}
-              />
-              <div className="hidden h-full w-full items-center justify-center bg-white/5 text-white/20">
-                <cert.icon className="size-5" />
-              </div>
-            </div>
+            {/* Background Image - Styled like image_8f3fbd.png */}
+            <img 
+              src={cert.image} 
+              alt={cert.title}
+              className="absolute inset-0 h-full w-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+            />
+            
+            {/* Dark Gradient Overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
 
-            <div className="flex-1 min-w-0 pr-2">
-              <div className="flex items-center justify-between gap-2 mb-0.5">
-                <h3 className="text-[13px] font-semibold text-white/90 truncate">{cert.title}</h3>
-                <span className={`shrink-0 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-white/5 bg-white/5 ${cert.date === 'In Progress' ? 'text-blue-400/70' : 'text-emerald-400/70'}`}>
+            {/* Content Container */}
+            <div className="absolute inset-0 flex flex-col justify-end p-8 space-y-4">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <cert.icon className={`size-5 ${cert.color}`} />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
+                    {cert.issuer}
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-white tracking-tight">
+                  {cert.title}
+                </h3>
+              </div>
+
+              {/* Status Badge - Positioned like the 'Reserve' button/tags */}
+              <div className="flex items-center gap-3">
+                <span className={`text-[11px] font-bold px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md ${cert.date === 'In Progress' ? 'text-blue-400' : 'text-emerald-400'}`}>
                   {cert.date}
                 </span>
               </div>
-              <p className="text-[11px] text-white/40 truncate">{cert.issuer}</p>
             </div>
           </div>
         ))}

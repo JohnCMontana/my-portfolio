@@ -1,18 +1,13 @@
+import React from 'react'
+import { motion } from 'framer-motion'
 import Section from './ui/Section'
 
-const toolkit = [
-  {
-    title: 'Core Security',
-    items: ['Wazuh', 'Suricata', 'Watchguard', 'Linux'],
-  },
-  {
-    title: 'Automation & Lab',
-    items: ['GitHub', 'Docker', 'Python', 'n8n'],
-  },
-  {
-    title: 'Tools & Workflow',
-    items: ['Gemini', 'Claude', 'Trae', 'Figma'],
-  },
+const tools = [
+  'Next.js', 'Suricata', 'Watchguard', 'Linux',
+  'GitHub', 'Docker', 'Python', 'Wireshark',
+  'Gemini', 'Claude', 'Trae', 'Figma',
+  'React', 'Java', 'Wazuh', 'Tailwind',
+  'MongoDB', 'MySQL', 'Git', 'n8n'
 ]
 
 const toolIcons = {
@@ -23,76 +18,78 @@ const toolIcons = {
   Claude: '/images/logos/claude.png',
   Gemini: '/images/logos/gemini.png',
   Docker: '/images/logos/docker.png',
-  VirusTotal: '/images/logos/virustotal.png',
   n8n: '/images/logos/n8n.png',
   Linux: '/images/logos/linux.png',
-  Wireshark: '/images/logos/wireshark.png',
   Wazuh: '/images/logos/wazuh.png',
   Suricata: '/images/logos/suricata.png',
   Watchguard: '/images/logos/watchguard.png',
-}
-
-const toolLinks = {
-  Python: 'https://www.python.org/',
-  GitHub: 'https://github.com/',
-  Trae: 'https://trae.ai/',
-  Figma: 'https://www.figma.com/',
-  Claude: 'https://claude.ai/',
-  Gemini: 'https://gemini.google/about/',
-  Docker: 'https://docker.com/',
-  VirusTotal: 'https://www.virustotal.com/',
-  n8n: 'https://n8n.io/',
-  Linux: 'https://www.linux.org/',
-  Wireshark: 'https://www.wireshark.org/',
-  Wazuh: 'https://www.wazuh.com/',
-  Suricata: 'https://suricata.io',
-  Watchguard: 'https://www.watchguard.com/',
+  React: '/images/logos/react.png',
+  Java: '/images/logos/java.png',
+  'Next.js': '/images/logos/nextjs.png',
+  Tailwind: '/images/logos/tailwind.png',
+  MongoDB: '/images/logos/mongodb.png',
+  MySQL: '/images/logos/mysql.png',
+  Git: '/images/logos/git.png',
+  Wireshark: '/images/logos/wireshark.png',
 }
 
 const TechStack = () => {
   return (
     <Section id="tech" title="Tech Stack">
-      <p className="text-sm text-white/40">
-        The stack behind my daily workflow—powering the cycle from threat detection to active mitigation.
-      </p>
-      <div className="mt-6 grid gap-8 md:grid-cols-2">
-        {toolkit.map((group) => (
-          <div key={group.title}>
-            <div className="text-sm font-semibold text-white/90">{group.title}</div>
-            <div className="mt-3 h-px w-full bg-gradient-to-r from-white/10 to-transparent" />
-            <ul className="mt-4 space-y-3">
-              {group.items.map((item) => {
-                const icon = toolIcons[item]
-                const link = toolLinks[item]
-                const initials = item
-                  .split(' ')
-                  .map((part) => part[0])
-                  .join('')
-                  .slice(0, 2)
-
-                return (
-                  <li key={item} className="text-sm text-white/40">
-                    <a
-                      href={link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group flex items-center gap-3 hover:text-white"
-                    >
-                      <span className="flex size-8 items-center justify-center">
-                        {icon ? (
-                          <img src={icon} alt="" className="size-8 transition-transform group-hover:scale-110" />
-                        ) : (
-                          initials
-                        )}
-                      </span>
-                      <span>{item}</span>
-                    </a>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        ))}
+      <div className="relative h-[400px] w-full flex items-center justify-center overflow-hidden">
+        {/* Isometric Grid Container */}
+        <div 
+          className="relative grid grid-cols-4 gap-4 md:gap-6"
+          style={{
+            transform: 'rotateX(45deg) rotateZ(-45deg)',
+            transformStyle: 'preserve-3d',
+          }}
+        >
+          {tools.map((item, index) => {
+            const icon = toolIcons[item]
+            
+            return (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ 
+                  opacity: 1, 
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  opacity: { duration: 0.5, delay: index * 0.05 },
+                  y: {
+                    duration: 3 + Math.random() * 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: Math.random() * 2
+                  }
+                }}
+                className="group relative"
+              >
+                <div className="relative size-12 md:size-16 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm p-2 md:p-3 flex items-center justify-center shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20 group-hover:-translate-z-4 group-hover:scale-110">
+                  {icon ? (
+                    <img 
+                      src={icon} 
+                      alt={item} 
+                      className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" 
+                    />
+                  ) : (
+                    <span className="text-xs font-bold text-white/20">{item.slice(0, 2)}</span>
+                  )}
+                  
+                  {/* Tool Name Tooltip */}
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-black/80 border border-white/10 text-[10px] text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">
+                    {item}
+                  </div>
+                </div>
+                
+                {/* Visual shadow underneath */}
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-black/40 blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.div>
+            )
+          })}
+        </div>
       </div>
     </Section>
   )

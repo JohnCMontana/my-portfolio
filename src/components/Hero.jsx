@@ -9,12 +9,13 @@ const Hero = () => {
   const [isContactOpen, setIsContactOpen] = useState(false)
 
   return (
-    <Section id="home">
+    <Section id="home" title=": )" hideTitle={true}>
       <Contact 
         isOpen={isContactOpen} 
         onClose={() => setIsContactOpen(false)} 
         email="johnclyde.montana@gmail.com" 
       />
+      
       <div className="md:px-8">
         <div className="mb-12 flex flex-col items-start text-left">
           <div className="space-y-1">

@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
-import { HiCpuChip, HiFolder, HiHome, HiMap } from 'react-icons/hi2'
+import { HiCpuChip, HiFolder, HiHome, HiBriefcase } from 'react-icons/hi2'
 
 const links = [
   { href: '#home', label: 'Home', Icon: HiHome },
   { href: '#skills', label: 'Skills', Icon: HiCpuChip },
-  { href: '#journey', label: 'Journey', Icon: HiMap },
+  { href: '#experience', label: 'Experience', Icon: HiBriefcase },
   { href: '#learning', label: 'More', Icon: HiFolder },
 ]
 
