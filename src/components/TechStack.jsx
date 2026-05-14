@@ -36,15 +36,8 @@ const toolIcons = {
 const TechStack = () => {
   return (
     <Section id="tech" title="Tech Stack">
-      <div className="relative h-[400px] w-full flex items-center justify-center overflow-hidden">
-        {/* Isometric Grid Container */}
-        <div 
-          className="relative grid grid-cols-4 gap-4 md:gap-6"
-          style={{
-            transform: 'rotateX(45deg) rotateZ(-45deg)',
-            transformStyle: 'preserve-3d',
-          }}
-        >
+      <div className="relative w-full flex items-center justify-center py-2">
+        <div className="relative grid grid-cols-4 gap-4 md:gap-6">
           {tools.map((item, index) => {
             const icon = toolIcons[item]
             
@@ -67,12 +60,12 @@ const TechStack = () => {
                 }}
                 className="group relative"
               >
-                <div className="relative size-12 md:size-16 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm p-2 md:p-3 flex items-center justify-center shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20 group-hover:-translate-z-4 group-hover:scale-110">
+                <div className="relative size-12 md:size-16 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm p-2 md:p-3 flex items-center justify-center shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20 group-hover:scale-110">
                   {icon ? (
                     <img 
                       src={icon} 
                       alt={item} 
-                      className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" 
+                      className="w-full h-full object-contain" 
                     />
                   ) : (
                     <span className="text-xs font-bold text-white/20">{item.slice(0, 2)}</span>
